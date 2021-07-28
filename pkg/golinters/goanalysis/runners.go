@@ -127,6 +127,9 @@ func buildIssues(diags []Diagnostic, linterNameBuilder func(diag *Diagnostic) st
 }
 
 func formatSuggestFix(fix string) string {
+	if len(fix) == 0 {
+		return ""
+	}
 	return fmt.Sprintf("\n```\n%s\n```\n", fix)
 }
 
