@@ -91,10 +91,18 @@ func buildIssues(diags []Diagnostic, linterNameBuilder func(diag *Diagnostic) st
 		linterName := linterNameBuilder(diag)
 
 		var text string
+
+		var fix string
+		for _, suggestedFix := range diag.SuggestedFixes {
+			for _, textEdit := range suggestedFix.TextEdits {
+				fix += string(textEdit.NewText)
+			}
+		}
+
 		if diag.Analyzer.Name == linterName {
 			text = diag.Message
 		} else {
-			text = fmt.Sprintf("%s: %s", diag.Analyzer.Name, diag.Message)
+			text = fmt.Sprintf("%s: %s\n%s", diag.Analyzer.Name, diag.Message, formatSuggestFix(fix))
 		}
 
 		issues = append(issues, result.Issue{
@@ -116,6 +124,10 @@ func buildIssues(diags []Diagnostic, linterNameBuilder func(diag *Diagnostic) st
 		}
 	}
 	return issues
+}
+
+func formatSuggestFix(fix string) string {
+	return fmt.Sprintf("\n```\n%s\n```\n", fix)
 }
 
 func getIssuesCacheKey(analyzers []*analysis.Analyzer) string {
