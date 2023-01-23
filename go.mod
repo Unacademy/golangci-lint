@@ -19,7 +19,7 @@ require (
 	github.com/fatih/color v1.12.0
 	github.com/fzipp/gocyclo v0.3.1
 	github.com/go-critic/go-critic v0.5.6
-	github.com/go-xmlfmt/xmlfmt v0.0.0-20191208150333-d5b6f63a941b
+	github.com/go-xmlfmt/xmlfmt v1.1.2
 	github.com/gofrs/flock v0.8.1
 	github.com/golangci/check v0.0.0-20180506172741-cfe4005ccda2
 	github.com/golangci/dupl v0.0.0-20180902072040-3e9179ac440a
@@ -59,7 +59,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/polyfloyd/go-errorlint v0.0.0-20210510181950-ab96adb96fea
 	github.com/prometheus/procfs v0.6.0 // indirect
-	github.com/ryancurrah/gomodguard v1.2.2
+	github.com/ryancurrah/gomodguard v1.3.0
 	github.com/ryanrolds/sqlclosecheck v0.3.0
 	github.com/sanposhiho/wastedassign/v2 v2.0.6
 	github.com/securego/gosec/v2 v2.8.1
@@ -83,7 +83,7 @@ require (
 	github.com/uudashr/gocognit v1.0.5
 	github.com/valyala/quicktemplate v1.6.3
 	github.com/yeya24/promlinter v0.1.0
-	golang.org/x/tools v0.1.5
+	golang.org/x/tools v0.1.12
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	honnef.co/go/tools v0.2.0
 	mvdan.cc/gofumpt v0.1.1
